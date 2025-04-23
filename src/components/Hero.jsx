@@ -12,24 +12,24 @@ const Hero = () => {
   });
 
   const socialLinks = [
-    { icon: <FaGithub className="text-2xl" />, url: "https://github.com/yourusername" },
-    { icon: <FaLinkedin className="text-2xl" />, url: "https://linkedin.com/in/yourprofile" },
-    { icon: <FaTwitter className="text-2xl" />, url: "https://twitter.com/yourhandle" }
+    { icon: <FaGithub className="text-2xl" />, url: "https://github.com/Phukhao15" },
+    { icon: <FaLinkedin className="text-2xl" />, url: "https://www.linkedin.com/in/phusit-boonwong-547b40331/" },
+    // { icon: <FaTwitter className="text-2xl" />, url: "https://twitter.com/yourhandle" }
   ];
 
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 px-6 py-20 md:py-0"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-blue-100 px-6 py-20 md:py-0"
     >
       <motion.div
         ref={ref}
         className="max-w-4xl mx-auto text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} // Custom easing
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* Profile Image with Floating Animation */}
+        {/* Improved Profile Image Section */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0, y: 20 }}
           animate={inView ? { 
@@ -45,19 +45,22 @@ const Hero = () => {
             stiffness: 100
           }}
           whileHover={{ y: -10 }}
-          className="relative mx-auto w-fit mb-8"
+          className="relative mx-auto w-fit mb-8 group"
         >
-          <img
-            src={profileImg}
-            alt="Profile"
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-blue-500 shadow-lg relative z-10"
-          />
-          <div className="absolute inset-0 bg-blue-500 rounded-full blur-md opacity-30 -z-10 animate-pulse"></div>
+          <div className="relative z-10 rounded-full p-1 bg-gradient-to-tr from-blue-400 to-blue-600">
+            <img
+              src={profileImg}
+              alt="Profile"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white shadow-lg object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-400 to-blue-600 blur-lg opacity-30 -z-10 group-hover:opacity-50 transition-opacity duration-300"></div>
+          <div className="absolute -inset-2 rounded-full bg-blue-100 opacity-0 group-hover:opacity-30 -z-20 transition-opacity duration-500"></div>
         </motion.div>
 
         {/* Headline with Staggered Letters Animation */}
         <motion.h1 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -84,7 +87,7 @@ const Hero = () => {
 
         {/* Subtitle with Typewriter Effect */}
         <motion.p 
-          className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
+          className="text-lg md:text-xl text-gray-600 mb-8"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
@@ -95,7 +98,7 @@ const Hero = () => {
             transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="inline-block overflow-hidden whitespace-nowrap"
           >
-            Front-End Developer | Passionate about UI/UX & Interactive Web Experiences
+            Front-End Developer 
           </motion.span>
         </motion.p>
 
@@ -121,15 +124,15 @@ const Hero = () => {
           <motion.a
             href="/resume.pdf"
             download
-            className="px-6 py-3 border-2 border-blue-500 text-blue-500 dark:text-blue-400 font-semibold rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition duration-300 flex items-center justify-center gap-2"
+            className="px-6 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-full hover:bg-blue-50 transition duration-300 flex items-center justify-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaFileDownload /> Download CV
+            <FaFileDownload /> Download Resume
           </motion.a>
         </motion.div>
 
-        {/* Social Links with Staggered Animation */}
+        {/* Social Links */}
         <motion.div 
           className="flex justify-center gap-4 mt-8"
           initial={{ opacity: 0 }}
@@ -142,7 +145,7 @@ const Hero = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+              className="text-blue-500 hover:text-blue-700 transition-colors"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ 

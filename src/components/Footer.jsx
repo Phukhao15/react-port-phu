@@ -13,25 +13,25 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FaEnvelope className="text-xl" />,
-      url: "mailto:your.email@example.com",
+      url: "phusitboonwong.phu@gmail.com",
       label: "Email",
       color: "hover:text-red-400"
     },
     {
       icon: <FaPhone className="text-xl" />,
-      url: "tel:+1234567890",
+      url: "tel:097-178-4484",
       label: "Phone",
       color: "hover:text-green-400"
     },
     {
       icon: <FaGithub className="text-xl" />,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Phukhao15",
       label: "GitHub",
       color: "hover:text-gray-300"
     },
     {
       icon: <FaLinkedin className="text-xl" />,
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://www.linkedin.com/in/phusit-boonwong-547b40331/",
       label: "LinkedIn",
       color: "hover:text-blue-500"
     }
@@ -94,10 +94,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Get In Touch</h3>
             <div className="space-y-2 text-gray-400 text-sm">
               <p className="flex items-center gap-2">
-                <FaEnvelope /> your.email@example.com
+                <FaEnvelope /> phusitboonwong.phu@gmail.com
               </p>
               <p className="flex items-center gap-2">
-                <FaPhone /> +123 456 7890
+                <FaPhone /> 097-178-4484
               </p>
             </div>
           </div>
@@ -133,12 +133,13 @@ const Footer = () => {
 
           {/* Resume Download */}
           <a
-            href="/resume.pdf"
-            download
+           href="https://drive.google.com/file/d/1lwRNUqFhh5nP_fk5zk_gHoxqFDJ2na69/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 md:mt-0 flex items-center gap-2 text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors"
-          >
-            <FaFileDownload /> Download Resume
-          </a>
+>
+  <FaFileDownload /> View Resume
+</a>
         </div>
       </div>
     </footer>

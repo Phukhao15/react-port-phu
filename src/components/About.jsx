@@ -29,12 +29,12 @@ const About = () => {
     {
       icon: <FaGraduationCap className="text-blue-500 text-3xl" />,
       title: "Education",
-      description: "Bachelor's degree in Computer Science. Continuously learning new technologies to keep my skills current."
+      description: "Bachelor's degree in Computer Engineering. Continuously learning new technologies to keep my skills current."
     },
     {
       icon: <FaRocket className="text-blue-500 text-3xl" />,
       title: "Goals",
-      description: "Aiming to create impactful digital experiences that solve real problems and delight users."
+      description: "Driven to explore emerging technologies and frameworks to enhance skills and contribute to innovative solutions."
     }
   ];
 
@@ -65,19 +65,19 @@ const About = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-gray-700 dark:text-gray-200 mb-4">
-              Hello, I'm <span className="text-blue-500">Phu</span>
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-              I'm a front-end developer with a passion for crafting intuitive and engaging user interfaces.
-              With experience in modern web technologies like <strong className="text-blue-500">React</strong>,
-              <strong className="text-blue-500"> Tailwind CSS</strong>, and interactive animation libraries,
-              I strive to bring ideas to life through clean and responsive design.
+           <h3 className="text-2xl font-bold text-gray-700 dark:text-gray-200 mb-4">
+           Hello, I'm <span className="text-blue-500">Phu</span>
+          </h3>
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+           I'm a passionate front-end enthusiast with a strong interest in building intuitive and engaging user interfaces.
+            I've gained hands-on experience through a variety of personal and academic projects, where I explored modern web technologies like 
+            <strong className="text-blue-500"> React</strong>, <strong className="text-blue-500"> Tailwind CSS</strong>, and interactive animation libraries 
+            to create clean and responsive designs.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              My approach combines technical expertise with an eye for design, ensuring that the websites and applications 
-              I build are not only functional but also visually appealing and user-friendly. I'm constantly exploring new 
-              technologies and techniques to enhance my skills and deliver better results.
+             I'm eager to grow as a developer, continuously learning both front-end and back-end technologies.
+             My goal is to become a well-rounded web developer who not only writes efficient code but also delivers
+             user-friendly and visually appealing digital experiences.
             </p>
           </motion.div>
           
@@ -92,27 +92,28 @@ const About = () => {
                 Quick Facts
               </h4>
               <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">X+ years of front-end development experience</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Specialized in React ecosystem</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Experienced with modern CSS frameworks</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Proficient in responsive and accessible design</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  <span className="text-gray-700 dark:text-gray-300">Based in [Your Location]</span>
-                </li>
-              </ul>
+  <li className="flex items-start">
+    <span className="text-blue-500 mr-2">✓</span>
+    <span className="text-gray-700 dark:text-gray-300">Recent graduate in Computer Engineering</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-blue-500 mr-2">✓</span>
+    <span className="text-gray-700 dark:text-gray-300">Strong foundation in HTML, CSS, JavaScript & React</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-blue-500 mr-2">✓</span>
+    <span className="text-gray-700 dark:text-gray-300">Familiar with Tailwind CSS and responsive design</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-blue-500 mr-2">✓</span>
+    <span className="text-gray-700 dark:text-gray-300">Open to both front-end and back-end development opportunities.
+Continuously learning new tools and frameworks across the stack.</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-blue-500 mr-2">✓</span>
+    <span className="text-gray-700 dark:text-gray-300">Based in Thailand 🇹🇭</span>
+  </li>
+</ul>
             </div>
           </motion.div>
         </div>

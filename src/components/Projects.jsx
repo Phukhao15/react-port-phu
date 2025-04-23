@@ -4,77 +4,122 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SectionWrapper from "./SectionWrapper";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
 
-// โครงสร้างข้อมูลโปรเจกต์
+// Project data
 const projects = [
   {
-    title: "My Portfolio",
-    description: "เว็บไซต์เรซูเม่ของผมที่สร้างด้วย React และ Tailwind CSS",
-    image: "/assets/project1.png",
-    demoLink: "#",
-    codeLink: "#",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    title: "Drink-Menu",
+    description: "เว็บไซต์แสดงรายละเอียดเกี่ยวกับเมนูเครื่องดื่ม",
+    image: "src/assets/project1.png",
+    demoLink: "https://drink-menu-app.vercel.app/",
+    codeLink: "https://github.com/Phukhao15/drink-menu-app",
+    tags: ["React", "Tailwind CSS", "Framer Motion" , "Maps"],
   },
   {
     title: "Todo App",
     description: "แอพจัดการงานแบบพื้นฐาน สร้างด้วย React + LocalStorage",
-    image: "/assets/project2.png",
-    demoLink: "#",
-    codeLink: "#",
+    image: "src/assets/project2.png",
+    demoLink: "https://app-todo-list-flax.vercel.app",
+    codeLink: "https://github.com/Phukhao15/app-todo-list",
     tags: ["React", "LocalStorage", "Custom Hooks"],
   },
   {
-    title: "Weather App",
-    description: "แอพพยากรณ์อากาศแบบเรียลไทม์ด้วย OpenWeatherMap API",
-    image: "/assets/project3.png",
-    demoLink: "#",
-    codeLink: "#",
-    tags: ["React", "API Integration", "Geolocation"],
+    title: "Model 3D",
+    description: "เว็บไซต์สำหรับแสดงโมเดล 3 มิติและใช้งานในรูปแบบ AR โดยใช้ Model-Viewer สำหรับแสดงโมเดล และ MindAR.js สำหรับการสแกนและติดตามโมเดล",
+    image: "src/assets/project3.png",
+    demoLink: "https://shost.rmutp.ac.th/2568/cpecar/",
+    codeLink: "https://github.com/Phukhao15/ProjectAR/",
+    tags: ["HTML", "Model-Viewer", "MindAR.js", "Blender"],
   },
 ];
 
 const Projects = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
+  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
   };
 
   const item = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      }
+    },
+  };
+
+  const hoverItem = {
+    scale: 1.03,
+    y: -5,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10
+    }
   };
 
   return (
-    <SectionWrapper id="projects" bg="bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-6"
+    <SectionWrapper id="projects" bg="bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Section Header */}
+        <motion.div
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-          โปรเจกต์ของ<span className="text-blue-600 dark:text-blue-400">ผม</span>
-        </motion.h2>
+          <motion.span 
+            className="inline-block text-blue-600 dark:text-blue-400 text-sm font-semibold mb-3 tracking-wider"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.2 }}
+          > 
+          </motion.span>
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.3 }}
+          >
+            My<span className="text-blue-600 dark:text-blue-400"> Projets</span>
+          </motion.h2>
+          <motion.div
+            className="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"
+            initial={{ scaleX: 0 }}
+            animate={inView ? { scaleX: 1 } : {}}
+            transition={{ delay: 0.4, duration: 0.6, ease: "backOut" }}
+          />
+          <motion.p
+            className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.5 }}
+          >
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-600">
+  A Selection of Projects I've Developed
+</h2>
+          </motion.p>
+        </motion.div>
 
-        <motion.p
-          className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          ผลงานบางส่วนที่ผมได้พัฒนาขึ้นมา
-        </motion.p>
-
+        {/* Projects Grid */}
         <motion.div
           ref={ref}
-          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
@@ -83,65 +128,104 @@ const Projects = () => {
             <motion.div
               key={index}
               variants={item}
-              whileHover={{ y: -10 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              whileHover={hoverItem}
+              className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-100 dark:border-gray-700"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img
+              {/* Project Image */}
+              <div className="relative h-56 overflow-hidden">
+                <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
-                      <span
+                      <motion.span
                         key={i}
-                        className="bg-blue-600/80 text-white text-xs px-2 py-1 rounded"
+                        className="bg-blue-600/90 text-white text-xs px-3 py-1.5 rounded-full"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 * i }}
+                        viewport={{ once: true }}
                       >
                         {tag}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </div>
+                <motion.div 
+                  className="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 rounded-full p-2 opacity-0 group-hover:opacity-100 shadow-md"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring" }}
+                >
+                  <FiArrowRight className="text-gray-800 dark:text-white" />
+                </motion.div>
               </div>
 
+              {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded-full">
+                    Project {index + 1}
+                  </span>
+                </div>
+                
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-5 leading-relaxed">
                   {project.description}
                 </p>
                 
-                <div className="flex justify-between items-center">
-                  <div className="flex gap-3">
-                    <a
+                <div className="flex justify-between items-center pt-3 border-t border-gray-100 dark:border-gray-700">
+                  <div className="flex gap-4">
+                    <motion.a
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium flex items-center gap-1"
+                      className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium flex items-center gap-2"
+                      whileHover={{ x: 3 }}
                     >
                       <FaExternalLinkAlt size={12} />
                       Demo
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
                       href={project.codeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:underline text-sm font-medium flex items-center gap-1"
+                      className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm font-medium flex items-center gap-2"
+                      whileHover={{ x: 3 }}
                     >
-                      <FaGithub size={12} />
+                      <FaGithub size={14} />
                       Code
-                    </a>
+                    </motion.a>
                   </div>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">
-                    Project {index + 1}
-                  </span>
                 </div>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* View More Button */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.8 }}
+        >
+          {/* <motion.a
+            href="#"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            ดูโปรเจกต์ทั้งหมด
+            <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </motion.a> */}
         </motion.div>
       </div>
     </SectionWrapper>
