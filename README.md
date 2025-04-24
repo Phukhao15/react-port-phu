@@ -1,12 +1,65 @@
-# React + Vite
+# เว็บไซต์พอร์ตโฟลิโอ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ภาพรวม
+นี่คือเว็บไซต์พอร์ตโฟลิโอส่วนตัวที่สร้างด้วย React เว็บไซต์นี้แสดงทักษะ โปรเจกต์ และข้อมูลการติดต่อของนักพัฒนา มีการออกแบบที่ตอบสนองต่อทุกอุปกรณ์และรองรับโหมดมืด
 
-Currently, two official plugins are available:
+## คุณสมบัติ
+- การออกแบบ UI ที่ทันสมัยและสะอาดตา
+- เลย์เอาต์ที่รองรับทุกขนาดหน้าจอ
+- การใช้งานโหมดมืด
+- การเลื่อนหน้าแบบนุ่มนวล
+- ส่วนต่างๆ ประกอบด้วย:
+  - ส่วนแนะนำตัว (Hero)
+  - เกี่ยวกับฉัน (About)
+  - ทักษะความสามารถ (Skills)
+  - ผลงาน (Projects)
+  - ติดต่อ (Contact)
+- แถบนำทางเพื่อการใช้งานที่สะดวก
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## เทคโนโลยีที่ใช้
+- React.js
+- Tailwind CSS (สำหรับการจัดสไตล์และโหมดมืด)
+- Font Awesome (สันนิษฐานว่าใช้สำหรับไอคอน)
 
-## Expanding the ESLint configuration
+## โครงสร้างโปรเจกต์
+โปรเจกต์นี้จัดระเบียบเป็นคอมโพเนนต์ต่างๆ ดังนี้:
+- `App.jsx` - คอมโพเนนต์หลักที่แสดงทุกส่วน
+- `components/Navbar.jsx` - คอมโพเนนต์แถบนำทาง
+- `components/Hero.jsx` - ส่วนแนะนำตัว
+- `components/About.jsx` - ส่วนเกี่ยวกับตัวคุณ
+- `components/Skills.jsx` - ส่วนทักษะความสามารถ
+- `components/Projects.jsx` - ส่วนแสดงผลงาน
+- `components/Contact.jsx` - ส่วนแบบฟอร์มติดต่อ
+- `components/Footer.jsx` - ส่วนท้ายเว็บไซต์
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## การติดตั้งและการตั้งค่า
+1. Clone Project
+```bash
+git clone https://github.com/Phukhao15/react-port-phu.git
+```
+
+2. นำทางไปยังไดเรกทอรีโปรเจกต์
+```bash
+cd portfolio-website
+```
+
+3. ติดตั้งแพคเกจที่จำเป็น
+```bash
+npm install
+```
+
+4. เริ่มต้นเซิร์ฟเวอร์สำหรับการพัฒนา
+```bash
+npm start
+```
+
+5. เปิดเบราว์เซอร์และเข้าชมที่ `http://localhost:5173`
+
+## การปรับแต่ง
+- อัปเดตเนื้อหาในแต่ละคอมโพเนนต์เพื่อปรับแต่งพอร์ตโฟลิโอของคุณ
+- แก้ไขสไตล์โดยการปรับคลาสของ Tailwind
+- เพิ่มคอมโพเนนต์หรือส่วนต่างๆ ตามต้องการ
+
+
+
+

@@ -146,10 +146,6 @@ const Contact = () => {
           >
             <div>
               <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Contact Details</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Feel free to reach out through any of these channels:
-              </p>
-              
               <div className="space-y-4">
                 {contactItems.slice(0, 3).map((item) => (
                   <div key={item.id} className="flex items-center gap-4">
