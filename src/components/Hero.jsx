@@ -14,7 +14,6 @@ const Hero = () => {
   const socialLinks = [
     { icon: <FaGithub className="text-2xl" />, url: "https://github.com/Phukhao15" },
     { icon: <FaLinkedin className="text-2xl" />, url: "https://www.linkedin.com/in/phusit-boonwong-547b40331/" },
-    // { icon: <FaTwitter className="text-2xl" />, url: "https://twitter.com/yourhandle" }
   ];
 
   return (
@@ -98,7 +97,7 @@ const Hero = () => {
             transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="inline-block overflow-hidden whitespace-nowrap"
           >
-            Front-End Developer 
+           Web Developper
           </motion.span>
         </motion.p>
 
@@ -122,7 +121,7 @@ const Hero = () => {
           </motion.a>
           
           <motion.a
-            href="/resume.pdf"
+            href="/Resume_Phuist.pdf"
             download
             className="px-6 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-full hover:bg-blue-50 transition duration-300 flex items-center justify-center gap-2"
             whileHover={{ scale: 1.05 }}
