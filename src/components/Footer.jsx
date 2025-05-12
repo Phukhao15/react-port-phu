@@ -133,7 +133,7 @@ const Footer = () => {
 
           {/* Resume Download */}
           <a
-           href="https://drive.google.com/file/d/1XPcYlyxtIQ2vLsA59vQpYcpkMiiIpRMo/view?usp=sharing"
+           href="https://drive.google.com/file/d/1uwNOHAUcNtohpcjl2XjlpQH1tfFbx2G_/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 md:mt-0 flex items-center gap-2 text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors"
